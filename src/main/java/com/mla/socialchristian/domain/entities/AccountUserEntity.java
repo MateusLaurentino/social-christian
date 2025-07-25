@@ -32,7 +32,7 @@ public class AccountUserEntity {
     public AccountUserEntity(){}
 
     public  AccountUserEntity(AccountUserInputModel input, String password){
-        this.name = input.name;
+        this.name = toTitleCase(input.name);
         this.email = input.email;
         this.birthday = input.birthday;
         this.password = password;
@@ -64,5 +64,22 @@ public class AccountUserEntity {
 
     public void setBirthday(Date birthday) {
         this.birthday = birthday;
+    }
+
+    private static String toTitleCase(String input) {
+        if (input == null || input.isBlank()) return input;
+
+        String[] words = input.toLowerCase().split(" ");
+        StringBuilder titleCase = new StringBuilder();
+
+        for (String word : words) {
+            if (!word.isEmpty()) {
+                titleCase.append(Character.toUpperCase(word.charAt(0)))
+                        .append(word.substring(1))
+                        .append(" ");
+            }
+        }
+
+        return titleCase.toString().trim();
     }
 }
