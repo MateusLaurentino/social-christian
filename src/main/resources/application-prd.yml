@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: social-christian
+  datasource:
+    url: jdbc:postgresql://${PGHOST}:${PGPORT}/${PGDATABASE}
+    username: ${PGUSER}
+    password: ${PGPASSWORD}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+
+security:
+  config:
+    key: ${SECRET_KEY}
+    expiration: ${EXPIRATION_TOKEN}
+
+springdoc:
+    packages-to-scan: com.mla.socialchristian.controllers

@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: social-christian
+  datasource:
+    url: jdbc:sqlite:socialchristian.db
+    driver-class-name: org.sqlite.JDBC
+  jpa:
+    database-platform: org.hibernate.community.dialect.SQLiteDialect
+    hibernate:
+      ddl-auto: update
+
+security:
+  config:
+    key: a1dda573822042f0a7190f653f4f6af2bd5d61dbef4b4260906757229efc1f78
+    expiration: 3600000
+
+springdoc:
+  packages-to-scan: com.mla.socialchristian.controllers
