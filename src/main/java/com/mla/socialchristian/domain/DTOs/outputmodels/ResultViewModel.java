@@ -20,7 +20,7 @@ public class ResultViewModel<T> {
     }
 
     public ResultViewModel<T> addErrors(String error){
-        this.errors.addLast(error);
+        this.errors.add(error);
         sucesso = false;
 
         return this;
